@@ -8,9 +8,8 @@ addons:
 
 before_install:
   - sudo service mysql stop
-  - echo -e "[mysqld]datadir=cache" | sudo tee -a ~travis/my.cnf
+  - echo -e "[mysqld]datadir=/home/travis/build/vineetbansal/TravisPlayground/cache" | sudo tee -a ~travis/my.cnf
   - echo $TRAVIS_BUILD_DIR
-  - sudo mysqld --initialize --datadir=cache
   - sudo service mysql start
   - mysql -e 'SOURCE data/sakila-schema.sql;'
   - mysql -e 'SOURCE data/sakila-data.sql;'
