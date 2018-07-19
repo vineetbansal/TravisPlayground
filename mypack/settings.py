@@ -1,5 +1,5 @@
 DEBUG = False
-SERVER_NAME = 'mycomputer.com:5000'
+SERVER_NAME = 'mycomputer.com'
 
 DB_USER = "travis"
 DB_PASS = ""
