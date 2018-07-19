@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from mypack import create_app
-from mypack.blueprints.web import index, hello
+from mypack.blueprints.web import index, hello, n_actors
 
 # Testing web endpoints/blueprint requires a working 'app'
 app = create_app(debug=True)
@@ -44,3 +44,6 @@ class APITestCase(TestCase):
         # If a blueprint renders a template, an app context needs to be pushed to the stack
         with app.app_context():
             self.assertEqual(hello(), 'Hello World')
+
+    def testBlueprintRoute3(self):
+        self.assertEqual(n_actors(), '200')
