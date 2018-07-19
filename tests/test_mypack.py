@@ -45,5 +45,5 @@ class APITestCase(TestCase):
         with app.app_context():
             self.assertEqual(hello(), 'Hello World')
 
-    def testBlueprintRoute3(self):
+    def ttestBlueprintRoute3(self):
         self.assertEqual(n_actors(), '200')
