@@ -6,7 +6,7 @@ addons:
   - mycomputer.com
 
 before_install:
-  - echo -e "[mysqld]datadir=$TRAVIS_BUILD_DIR/cache | sudo tee -a /etc/mysql/my.cnf
+  - echo -e "[mysqld]datadir=$TRAVIS_BUILD_DIR/cache" | sudo tee -a /etc/mysql/my.cnf
   - sudo service mysql restart
   - mysql -e 'SOURCE data/sakila-schema.sql;'
   - mysql -e 'SOURCE data/sakila-data.sql;'
